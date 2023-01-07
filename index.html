@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <!--To comment: CMD/--> 
+    <!-- To save: CMD/S -->
+    <!--"!"" and tab-->
+    <meta charset="UTF-8"/>
+    <!--Use the newest technology-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!--Make the website responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Import Google Fonts library --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet"/>
+    <!--link and tab-->
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css"/>
+    <!--Defer means displaying HTMl first and then JS--> 
+    <!-- <script scr="./js/main.js" defer></script> -->
+    <title>Porfolio</title>
+</head>
+<body>
+    <!-- Every element will have an attribute called class, which will helps us in tyling in CSS -->
+    <!-- header -->
+    <!-- To minimize the header: CMD, OPTION [] -->
+    <header>
+        <!-- To maximize the process, use "." and then type out the class name "container" and press tab -->
+        <div class="container">
+             <!-- To maximize the process, use "nav." and then type out the class name "navbar" and press tab -->
+            <nav class="navbar">
+                <!-- logo -->
+                <div class="navbar__logo">
+                    <img src="./img/porfolio_logo.svg" alt="website logo" />
+                </div>
+                <!-- links -->
+                <ul class="navbar__links">
+                    <!-- Shift Option Down arrow -->
+                    <li class="navbar__link"><a href="#works">Work</a></li>
+                    <li class="navbar__link"><a href="#things">About</a></li>
+                    <li class="navbar__link"><a href="./img/Nhi_Huynh_tech_resume.pdf" download="Nhi_Huynh_Resume">Resume</a></li>
+                    <a href="#"><button class="navbar__btn">Contact</button></a>
+                </ul>
+                <!-- menu button -->
+                <div class="navbar__icons">
+                    <div class="navbar__icon"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Banner -->
+    <!-- To create a id, use section#banner and tab -->
+    <!-- For each element, you can only have one id, but you can have many classes -->
+    <section id="banner">
+        <div class="container">
+            <!-- img -->
+            <div class="banner__img">
+                <img src="./img/banner-img1.png" alt="illustration of me"/>
+            </div>
+            <!-- heading -->
+            <div class="banner__heading">
+                <h1>Hello, I'm Nhi</h1>
+                <p>I am currently a first-gen college student at Harvard University with an interest in computer science. I am a insightful problem solver who is passionate about coming up with creative solutions to problems and developing software products that are easy to use and have a significant impact.</p>
+                <a  href="#"><button class="banner__btn">View More</button></a>
+                <div class="banner__socials">
+                    <a href="https://github.com/nikki2906"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/nhi-b-h-2a609a1b2/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/nhionfilms/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Writing -->
+    <section id="things">
+        <div class="container">
+          <!-- dec -->
+          <div class="things__dec">
+            <img src="./img/things-dec-l.png" alt="illustration of leaf" />
+          </div>
+          <!-- dec -->
+          <div class="things__dec">
+            <img src="./img/things-dec-r.png" alt="illustration of leaf" />
+          </div>
+          <!-- heading -->
+          <h2>Things I Do</h2>
+          <!-- item 1 -->
+          <div class="things__item">
+            <!-- img -->
+            <img src="./img/things-item-1.gif" alt="illustration of women" />
+            <!-- text -->
+            <div class="things__item--heading">
+              <h3>Research</h3>
+              <p>
+                I am particularly interested in Computer Science, and Machine Learning and have spent many hours exploring this area in depth and equipping new skills, including data analysis. 
+                Currently, I am researching interaction between magnetic fields and ionic currents in chemical systems and the potential to use electrostatics energy to sterilize water and food supplies. 
+              </p>
+            </div>
+          </div>
+          <!-- item 2 -->
+          <div class="things__item">
+            <!-- img -->
+            <img src="./img/things-item-2.gif" alt="illustration of women" />
+            <!-- text -->
+            <div class="things__item--heading">
+              <h3>Program</h3>
+              <p>
+                I am passionate about finding ways to use technology to address problems from the user's perspective, optimizing processes, and creating code that is clean and maintainable.
+                Here are some of the languages that I have been working with recently: Python, C, HTML/ CSS/ JS, SQL. 
+
+              </p>
+            </div>
+          </div>
+          <!-- item 3 -->
+          <div class="things__item">
+            <!-- img -->
+            <img src="./img/things-item-3.png" alt="illustration of computer" />
+            <!-- text -->
+            <div class="things__item--heading">
+              <h3>Volunteer</h3>
+              <p>
+                Outside of class, you can find me tutoring young students and working at the Homeless Shelter. I enjoy giving back to my community by volunteering my time and skills to help those in need.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- works -->
+    <section id="works">
+        <div class="container">
+          <!-- dec -->
+          <div class="works__dec">
+            <img src="./img/work-dec.png" alt="illustration of leaf" />
+          </div>
+          <div class="works__dec">
+            <img src="./img/work-dec.png" alt="illustration of leaf" />
+          </div>
+          <!-- heading -->
+          <h2>Recent Works</h2>
+          <!-- img -->
+          <div class="works__img">
+
+            <div class="flip-card works__img--single">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/work-1.png" alt="project" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>Budget Wise</h1>
+                    <p>HTML CSS Python Flask SQLy</p>
+                    <div class="works__btn">
+                        <a href="https://github.com/nikki2906/budgetwise-cs50"><button>View Budget Wise</button></a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="flip-card works__img--single">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/work-2.png" alt="research" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>Misinformation Research</h1>
+                    <p>Python</p>
+                    <div class="works__btn">
+                        <a href="https://www.youtube.com/watch?v=EfAynXL9nf0&t=1s&ab_channel=NhiHuynh"><button>View the presentation</button></a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="flip-card works__img--single">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/work-3.png" alt="research" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>Article</h1>
+                    <p>Harvard Political Review</p>
+                    <div class="works__btn">
+                        <a href="https://harvardpolitics.com/immigrants-assimilation-model/"><button>View Article</button></a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="flip-card works__img--single">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/work-4.png" alt="research" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>Article</h1>
+                    <p>Princeton Journalism Program</p>
+                    <div class="works__btn">
+                        <a href="https://psjp.princeton.edu/sites/g/files/toruqf2456/files/media/read_the_2021_princeton_summer_journal_1.pdf"><button>View Article</button></a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            <!-- <div class="works__img--single">
+              <img src="./img/work-4.png" alt="article" />
+            </div> -->
+          </div>
+          <!-- btn -->
+          <div class="works__btn">
+            <a href="#works"><button>View Works</button></a>
+          </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer id="footer">
+        <div class="container">
+          <!-- dec -->
+          <div class="footer__dec">
+            <img src="./img/things-dec-l.png" alt="illustration of leaf" />
+          </div>
+          <!-- img -->
+          <div class="footer__img">
+            <img src="./img/footer-img.png" alt="illustration of women" />
+          </div>
+          <!-- heading -->
+          <div class="footer__heading">
+            <h1>Contact me</h1>
+            <!-- contact -->
+            <div class="footer__contact">
+              <a href="tel:7472635796">
+                <i class="fas fa-phone-alt"></i>
+                <p>747-263-5796</p>
+              </a>
+              <a href="nhuynh@college.harvard.edu">
+                <i class="fas fa-envelope"></i>
+                <p>nhuynh[at]college.harvard.edu</p>
+              </a>
+            </div>
+            <div class="banner__socials">
+              <a href="https://github.com/nikki2906"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/nhi-b-h-2a609a1b2/"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/nhionfilms/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <!--Import font awesome library to use icon--> 
+    <script src="https://kit.fontawesome.com/9b0ab56658.js" crossorigin="anonymous"></script>
+    <!--Most effective way is to put JavaScript tag in the body because JS execute commands from top to bottom. If the head tag has some issue, the website will not display anything.-->
+    <script scr="./js/main.js" defer></script>
+</body>
+</html>

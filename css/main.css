@@ -1,0 +1,612 @@
+/* This is a single-line comment */ 
+/* Reset style which will delete spaces between elements */ 
+/* choose every elements in html */
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* If something happends in the library and Roboto can't perform, the program will automatically shift to sans-serif */
+    font-family: "Roboto", sans-serif;
+}
+
+img {
+    /* Make sure that the images are responsive and not broken */
+    max-width: 100%;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    /* Everytime we use max-width, it will automatically shift our container to the left, to cancel that, we would user margin  auto */
+    margin: 0 auto;
+    /* First number repersents above and below and second number represents right and left */
+    padding: 0 10px;
+}
+
+button {
+    text-align: center;
+    color: #fff;
+    background-color: var(--gray);
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: var(--smooth);
+}
+
+button:hover {
+    background-color: var(--green-l);
+    transition: var(--smooth);
+}
+
+/* This is variable in CSS */
+:root {
+    --green: #54b192;
+    --green-l: #a4cec0;
+    --gray: #3f3d56;
+    --smooth: all 0.3s ease-in;
+}
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 4;
+    display: none;
+}
+  
+#overlay.show {
+    display: initial;
+}
+
+/* header */
+header {
+    position: absolute;
+    width: 100%;
+}
+
+.navbar {
+     /* Put every elemnt on on row */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* logo */
+.navbar__logo img {
+    width: 57px;
+    height: 57px;
+    object-fit: cover;
+}
+
+/* menu */
+
+.navbar__links {
+    /* Keep the link at a fixed postion */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-color: var(--gray);
+    /* Keep the menu above every other elements */
+    z-index: 5;
+    transition: var(--smooth);
+    /* Push to the left */
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.navbar__links.navbar__open {
+    transform: translateX(0);
+    opacity: 1;
+    transition: var(--smooth);
+}
+
+.navbar__link {
+    list-style: none;
+    margin: 55px;
+}
+
+.navbar__link a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    transition: var(--smooth);
+}
+  
+.navbar__link a:hover {
+    color: var(--green);
+    transition: var(--smooth);
+}
+
+.navbar__btn {
+    font-size: 1rem;
+    background-color: var(--green);
+    margin-left: 45px;
+}
+
+/* menu button */
+.navbar__icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: var(--smooth);
+    z-index: 6;
+}
+
+.navbar__icon {
+    width: 45px;
+    height: 6px;
+    background-color: var(--gray);
+    border-radius: 5px;
+    transition: var(--smooth);
+    position: relative;
+}
+  
+.navbar__icon:before,
+.navbar__icon:after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 6px;
+  background-color: var(--gray);
+  border-radius: 5px;
+  transition: var(--smooth);
+}
+
+.navbar__icon:before {
+  transform: translateY(-12px);
+}
+
+.navbar__icon:after {
+  transform: translateY(12px);
+}
+
+/* Button animation */
+/* Cross over to become an X */
+.open .navbar__icon {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+/* top line  */
+.open .navbar__icon:before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+/* bottom line */
+.open .navbar__icon:after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+@media(min-width: 62em) {
+    .navbar__links {
+        position: initial;
+        /* Avoid pushing the menu to the left */
+        transform: translateX(0);
+        opacity: 1;
+        background-color: transparent;
+        display: flex;
+        /* Shif the menu to the right */
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navbar__link a {
+        color: var(--gray);
+    }
+    .navbar__icons {
+        display: none;
+    }
+    .navbar__btn {
+        background-color: var(--gray);
+    }
+}
+
+/* Banner */
+#banner {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .banner__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+  
+  .banner__heading {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--gray);
+  }
+  
+  .banner__heading h1 {
+    font-size: 2.25rem;
+    padding-top: 4em;
+    margin-bottom: 0.8em;
+  }
+  
+  .banner__heading p {
+    font-weight: 300;
+    line-height: 2em;
+    margin-bottom: 1.5em;
+  }
+  
+  .banner__btn {
+    font-size: 1rem;
+  }
+  
+  .banner__socials {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+  }
+  
+  .banner__socials a {
+    color: var(--gray);
+    transition: var(--smooth);
+  }
+  
+  .banner__socials a:hover {
+    color: var(--green-l);
+    transition: var(--smooth);
+  }
+#banner {
+    position: relative;
+    /* view height depends on the height of the screen */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.banner__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+  
+.banner__heading {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--gray);
+}
+
+/* heading */
+.banner__heading h1 {
+    font-size: 2.25rem;
+    padding-top: 4em;
+    margin-bottom: 0.8em;
+}
+/* paragraph of introduction */
+.banner__heading p {
+    font-weight: 300;
+    /* spaces between words */
+    line-height: 2em;
+    margin-bottom: 1.5em;
+}
+  
+/* view more button  */
+.banner__btn {
+    font-size: 1rem;
+}
+
+/* icon social media */
+.banner__socials {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+}
+
+.banner__socials a {
+    color: var(--gray);
+    transition: var(--smooth);
+}
+  
+ .banner__socials a:hover {
+    color: var(--green-l);
+    transition: var(--smooth);
+}
+
+@media (min-width: 62em) {
+    .banner__heading {
+      text-align: initial;
+      margin: 0;
+      padding-top: 0;
+    }
+    .banner__socials {
+      justify-content: flex-start;
+    }
+    .banner__socials a {
+      margin-right: 45px;
+    }
+    .banner__img {
+      width: 60%;
+    }
+}
+
+/* Things */
+#things {
+    position: relative;
+    overflow-x: hidden;
+    margin-top: 15em;
+  }
+  
+  #things h2 {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 3em;
+  }
+  
+  .things__dec {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-60%);
+    z-index: -1;
+  }
+  
+  .things__dec:nth-child(2) {
+    top: initial;
+    left: initial;
+    bottom: 15%;
+    right: 0;
+    transform: translateX(60%);
+    z-index: -1;
+  }
+  
+  .things__item {
+    margin: 3em 0;
+  }
+  
+  .things__item img {
+    padding-bottom: 4em;
+  }
+  
+  .things__item--heading {
+    text-align: center;
+    color: var(--gray);
+  }
+  
+  .things__item--heading p {
+    font-weight: 300;
+    line-height: 2em;
+    max-width: 300px;
+    margin: 0 auto;
+    padding-top: 1em;
+  }
+  
+  @media (min-width: 62em) {
+    .things__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+    }
+    .things__item img {
+      width: 40%;
+      padding-bottom: 0;
+    }
+    .things__item--heading {
+      width: 45%;
+      text-align: initial;
+    }
+    .things__item--heading p {
+      max-width: 500px;
+      margin: 0;
+    }
+    .things__item:nth-child(odd) img {
+      order: 2;
+      width: 40%;
+      padding-bottom: 0;
+    }
+    .things__item--heading:nth-child(odd) {
+      order: 1;
+      width: 45%;
+      text-align: initial;
+    }
+}
+
+/* === Works === */
+#works {
+    padding-top: 10em;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  #works h2 {
+    text-align: center;
+    color: var(--gray);
+  }
+  
+  .works__dec {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-60%);
+    z-index: -1;
+  }
+  .works__dec:nth-child(2) {
+    position: absolute;
+    top: initial;
+    left: initial;
+    bottom: 15%;
+    right: 0;
+    transform: translateX(60%);
+    z-index: -1;
+  }
+  
+  .works__img--single {
+    margin: 2em 0;
+  }
+  
+  .works__img--single:nth-child(odd) {
+    margin-top: 200px;
+    padding-top: -5em;
+  }
+  
+  .works__img--single:nth-child(3) {
+    margin-top: 5em;
+  }
+  
+  .works__btn {
+    text-align: center;
+    margin-top: 8em;
+  }
+  
+  .works__btn button {
+    font-size: 1rem;
+  }
+  
+  @media (min-width: 62em) {
+    #works h2 {
+      margin-bottom: 3em;
+    }
+    .works__img {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .works__img--single {
+      margin: 0 5em;
+      width: 35%;
+    }
+    .works__img--single:nth-child(3) {
+     margin-top: 200px;
+    }
+ }
+  
+/* Flip card */
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #a4cec0;
+    color: white;
+    height: 150%;
+    transform: rotateY(180deg);
+  }
+
+/* === Footer === */
+#footer {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(25%);
+    z-index: -1;
+  }
+  
+  .footer__heading {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--gray);
+  }
+  
+  .footer__contact {
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .footer__contact a {
+    text-decoration: none;
+    color: var(--gray);
+  }
+  
+  .footer__dec {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-45%);
+    z-index: -1;
+  }
+  
+@media (min-width: 62em) {
+    .footer__img {
+      top: -15%;
+      right: 0;
+      transform: translateX(32%);
+      width: 60%;
+    }
+    .footer__heading {
+      text-align: initial;
+      margin: 0;
+    }
+    .footer__contact {
+      display: flex;
+      justify-content: space-between;
+    }
+ }
